@@ -102,6 +102,32 @@ function updateDOM() {
   updateSavedColumns();
 }
 
+// Function to add to column list, and reset textbox
+function addToColumn(column) {
+  console.log(addItems[column].textContent);
+  const itemText = addItems[column].textContent
+  const selectedArray = listArrays[column];
+  selectedArray.push(itemText);
+  addItems[column].textContent = '';
+  updateDOM();
+}
+
+// Show add item input box
+function showInputBox(column) {
+  addBtns[column].style.visibility = 'hidden';
+  saveItemBtns[column].style.display = 'flex';
+  addItemContainers[column].style.display = 'flex';
+}
+
+// Hide item input box
+function hideInputBox(column) {
+  addBtns[column].style.visibility = 'visible';
+  saveItemBtns[column].style.display = 'none';
+  addItemContainers[column].style.display = 'none';
+  // to save new data to column list
+  addToColumn(column);
+}
+
 // Allows arrays to rebuild the arrays based on what is now in the columns
 function rebuildArrays() {
   
