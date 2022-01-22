@@ -115,7 +115,7 @@ function updateDOM() {
   updateSavedColumns();
 }
 
-// Update/e Item -
+// Update/delete Items -
 function updateItem(id, column) {
   const selectedArray = listArrays[column];
   
